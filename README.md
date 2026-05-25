@@ -1,10 +1,10 @@
 # GeoSVG-RL
 
-A runnable research codebase for **Geometry-Aware Reinforcement Learning for Layout-Constrained Text-to-SVG Diagram Generation**.
+A codebase for **Geometry-Aware Reinforcement Learning for Layout-Constrained Text-to-SVG Diagram Generation**.
 
 This repository implements a plan-first SVG diagram generator, a procedural synthetic data engine, a browser/XML-backed SVG verifier, geometry-aware metrics and rewards, supervised warm start training, verifier reranking, and a practical custom GRPO training loop.
 
-> Scope: the repository is designed to reproduce the method described in the paper draft and to be usable as a public GitHub release. It includes a CPU smoke path that runs without downloading a 7B model, plus full training scripts for Qwen2.5-Coder-7B-Instruct with LoRA on GPU.
+> Scope: the repository includes a CPU smoke path that runs without downloading a 7B model, plus full training scripts for Qwen2.5-Coder-7B-Instruct with LoRA on GPU.
 
 ---
 
