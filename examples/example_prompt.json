@@ -1,0 +1,4 @@
+{
+  "prompt": "Draw a clean retrieval-augmented generation pipeline with User Query, Query Encoder, Retriever, Reranker, Generator, and Answer. Keep all text inside boxes and align arrows to anchors.",
+  "family": "retrieval"
+}

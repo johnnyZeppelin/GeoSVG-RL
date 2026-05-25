@@ -1,0 +1,58 @@
+seed: 13
+canvas:
+  width: 800
+  height: 600
+data:
+  out: data/geosvg_synth
+  n_train: 48000
+  n_val: 4000
+  n_iid_test: 4000
+  n_template_test: 2000
+  n_complexity_test: 2000
+  n_real_prompt_test: 200
+model:
+  base_model: Qwen/Qwen2.5-Coder-7B-Instruct
+  max_seq_length: 4096
+  max_new_tokens: 2048
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+    target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+sft:
+  epochs: 3
+  learning_rate: 2.0e-5
+  batch_size: 128
+  per_device_batch_size: 1
+  gradient_accumulation_steps: 128
+  warmup_ratio: 0.03
+  weight_decay: 0.01
+grpo:
+  group_size: 4
+  clip_range: 0.2
+  learning_rate: 5.0e-6
+  batch_size: 32
+  gradient_accumulation_steps: 4
+  updates: 1500
+  kl_coef: 0.02
+  temperature: 0.6
+  top_p: 0.90
+verifier:
+  use_browser: true
+  timeout_ms: 5000
+  num_workers: 8
+  anchor_threshold_px: 12
+  text_padding_px: 6
+reward:
+  weights:
+    exec: 1.0
+    fit: 0.6
+    overflow: 0.5
+    anchor: 1.2
+    text: 1.1
+    padding: 0.5
+    graph: 0.9
+    clean: 0.3
+  curriculum:
+    local_updates: 500
+    ramp_updates: 500

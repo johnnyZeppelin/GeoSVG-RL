@@ -1,0 +1,25 @@
+seed: 13
+canvas:
+  width: 800
+  height: 600
+data:
+  out: data/smoke
+  n_train: 20
+  n_val: 5
+  n_test: 5
+verifier:
+  use_browser: auto
+  timeout_ms: 5000
+  num_workers: 2
+  anchor_threshold_px: 12
+  text_padding_px: 6
+reward:
+  weights:
+    exec: 1.0
+    fit: 0.6
+    overflow: 0.5
+    anchor: 1.2
+    text: 1.1
+    padding: 0.5
+    graph: 0.9
+    clean: 0.3

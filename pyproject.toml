@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geosvg-rl"
+version = "0.1.0"
+description = "Geometry-aware RL for layout-constrained text-to-SVG diagram generation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "GeoSVG-RL Authors"}]
+dependencies = [
+  "numpy>=1.24",
+  "tqdm>=4.66",
+  "pyyaml>=6.0",
+  "lxml>=4.9",
+  "pillow>=10.0",
+  "cairosvg>=2.7",
+]
+
+[project.optional-dependencies]
+browser = [
+  "playwright>=1.44",
+]
+train = [
+  "torch>=2.2",
+  "transformers>=4.45",
+  "datasets>=2.18",
+  "accelerate>=0.31",
+  "peft>=0.12",
+  "bitsandbytes>=0.43; platform_system != 'Darwin'",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+all = [
+  "geosvg-rl[browser,train,dev]",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

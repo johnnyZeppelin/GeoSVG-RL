@@ -1,0 +1,7 @@
+numpy>=1.24
+tqdm>=4.66
+pyyaml>=6.0
+lxml>=4.9
+pillow>=10.0
+cairosvg>=2.7
+playwright>=1.44
